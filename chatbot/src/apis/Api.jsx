@@ -31,8 +31,19 @@ const URL_API = 'http://localhost:5000/api/prompt'
 
 export const makeRequest = async (message) => {
   console.log(message)
-  const {data} = await axios.post(URL_API, message)
- 
+  const { data } = await axios.post(URL_API, message)
+
   return data
 }
 
+// API to get data by userid
+export const getDataByUserId = async (params) => {
+  const { id } = params;
+  try {
+    const { data } = await Api.get(`/api/gethistory/${id}`, config);
+    return data;
+  } catch (error) {
+    console.error('Error fetching data by userid:', error);
+    throw error;
+  }
+};

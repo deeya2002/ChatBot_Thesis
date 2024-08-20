@@ -90,17 +90,19 @@ import './ChatMessage.css';
 
 const ChatMessage = ({ message }) => {
   return (
-    <div className="chat-container">
-      <h1>Chatbot</h1> 
-      <div className={`chat-message ${message.user === 'gpt' ? 'chatgpt' : 'user'}`}>
-        <div className='chat-message-center'>
-          <div className={`avatar ${message.user === 'gpt' ? 'chatgpt' : 'user'}`}>
-            {message.user === 'gpt' && (
-              <img src="/assets/images/logo.png" alt="Chatbot Logo" width={41} height={41} />
-            )}
-          </div>
-          <div className='message-bubble'>
-            <p>{message.message}</p>
+    <div>
+      {/* <h1>Chatbot For Students</h1> */}
+      <div className="chat-container">
+        <div className={`chat-message ${message.user === 'gpt' ? 'chatgpt' : 'user'}`}>
+          <div className='chat-message-center'>
+            <div className={`avatar ${message.user === 'gpt' ? 'chatgpt' : 'user'}`}>
+              {message.user === 'gpt' && (
+                <img src="/assets/images/logo.png" alt="Chatbot Logo" width={41} height={41} />
+              )}
+            </div>
+            <div className='message-bubble'>
+              <p>{message.message}</p>
+            </div>
           </div>
         </div>
       </div>
